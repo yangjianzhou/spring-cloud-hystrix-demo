@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 8080
+eureka:
+  client:
+    #服务自身就是治理中心，所以这里设置为false，取消注册
+    register-with-eureka: false
+    #取消服务获取
+    fetch-registry: false
+#    service-url: http://localhost:5002/eureka/
+  instance:
+    #服务治理中心服务器ip
+    hostname: 127.0.0.1
+logging:
+  level:
+    root: debug
