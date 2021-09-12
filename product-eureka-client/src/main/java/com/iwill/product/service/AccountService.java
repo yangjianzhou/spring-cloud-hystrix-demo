@@ -15,7 +15,7 @@ public class AccountService {
     @Autowired
     private RestTemplate restTemplate ;
 
-    @HystrixCommand( fallbackMethod = "fallback")
+    @HystrixCommand( fallbackMethod = "fallback",groupKey = "groupKey_1",commandKey = "commandKey_1" ,threadPoolKey = "threadPoolKey")
     public String deductAmount(long userId ,long amount){
         Map<String,Object> params = new HashMap<String, Object>();
         params.put("userId",userId);
